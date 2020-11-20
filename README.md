@@ -1,4 +1,4 @@
-# SIMIF (Shiny Interface for Municipality Interactive Forecast)
+# SIMIF (Shiny Interface for Municipality Interactive Forecasts)
 ## Previsioni meteo a scala comunale sulla Lombardia by ShinyApp
 ### Introduzione
 SIMIF è un applicativo in grado di restituire previsioni meteorologiche a 72h per qualsiasi comune della Lombardia. Al 20-11-2020 le variabili visualizzabili, a scadenza oraria, sono temperatura a 2m, precipitazione cumulata, nuvolosità (in ottavi), velocità e direzione del vento a 10m. I dati sono elaborazioni dal modello numerico COSMO 5M.
