@@ -44,7 +44,7 @@ ui <- fluidPage(
             selectInput("comune", "Comune:", 
                         choices=NULL),
             hr(),
-            h4("Tabella dati - T (°C), Prec (mm)"),
+            h4("Tabella dati - T (Â°C), Prec (mm)"),
             DT::dataTableOutput("table")
             #tableOutput("table")
         ),
@@ -151,7 +151,7 @@ server <- function(input, output,session){
         meteogram2 <- plot_ly(meteo_comune, x = ymd_hm(base_comune()$Orario), y = as.double(base_comune()$Temperatura), type = 'scatter',
                              mode = 'lines+markers', line = list(color = 'green',width = 3), marker = list(color = 'green', size = 8) ) %>%
             layout(title = paste("Temperatura a ",input$comune," (",input$prov,")",sep=""),
-                   yaxis = list(title = "Temperatura (°C)"))
+                   yaxis = list(title = "Temperatura (Â°C)"))
     })
     
     output$meteogram3 <- renderPlotly({
@@ -159,15 +159,15 @@ server <- function(input, output,session){
                              marker = list(color = 'rgb(192,192,192)', alpha = 0.5,
                                            line = list(color = 'rgb(128,128,128)',
                                                        width = 1.5))) %>%
-            layout(title = paste("Nuvolosità a ",input$comune," (",input$prov,")",sep=""),
-                   yaxis = list(title = "Nuvolosità (ottavi)", range = c(0,8)))
+            layout(title = paste("Nuvolosita' a ",input$comune," (",input$prov,")",sep=""),
+                   yaxis = list(title = "Nuvolosita' (ottavi)", range = c(0,8)))
     })
     
     output$meteogram4 <- renderPlotly({
         meteogram2 <- plot_ly(meteo_comune, x = ymd_hm(base_comune()$Orario), y = as.double(base_comune()$VV), type = 'scatter',
                               mode = 'lines+markers', line = list(color = 'red',width = 3), marker = list(color = 'red', size = 8) ) %>%
-            layout(title = paste("Velocità e direzione del vento a ",input$comune," (",input$prov,")",sep=""),
-                   yaxis = list(title = "Velocità vento (m/s)", range = c(0,2*max(as.double(base_comune()$VV)))), annotations = list(x = ymd_hm(base_comune()$Orario),
+            layout(title = paste("Velocita' e direzione del vento a ",input$comune," (",input$prov,")",sep=""),
+                   yaxis = list(title = "Velocita' vento (m/s)", range = c(0,2*max(as.double(base_comune()$VV)))), annotations = list(x = ymd_hm(base_comune()$Orario),
                         y = as.double(base_comune()$VV), font = list(color = "black", size = 12),
                         arrowcolor = "black", ax=(as.double(base_comune()$u10)*10), ay=(as.double(base_comune()$v10)*10), arrowsize = 3, arrowwidth = 1, arrowhead = 1)
             )
