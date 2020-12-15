@@ -32,7 +32,7 @@ hcc <- ncvar_get(ncfile_surf, "hcc")
 mcc <- ncvar_get(ncfile_surf, "mcc")
 lcc <- ncvar_get(ncfile_surf, "lcc")
 
-#Variabili accessorie che possono essere acquisite una volta sola visto che il modello è lo stesso
+#Variabili accessorie che possono essere acquisite una volta sola visto che il modello Ã¨ lo stesso
 lat  <- ncvar_get(ncfile_surf, "latitude")
 nlat <- dim(lat)
 lon  <- ncvar_get(ncfile_surf, "longitude")
@@ -42,7 +42,7 @@ ntime<- dim(time)
 
 
 ############################# FUNZIONI #####################
-# E necessario interpolare i punti di griglia del modello affinchè io possa avere il dato per ogni comune lombardo
+# E necessario interpolare i punti di griglia del modello affinchÃ¨ io possa avere il dato per ogni comune lombardo
 # Creo quindi una funzione "interpola" con la libreria "fields"
 interpola<-function(var,lon,lat,punti) {
   nlat  <-dim(lat)
@@ -93,7 +93,7 @@ copertura <- function(tcc) {
   return(tcc_8)
 }
 
-#Funzione che calcola velocità e direzione del vento
+#Funzione che calcola velocitÃ  e direzione del vento
 vento <- function(u10,v10) {
   
   ntime <- dim(u10)[3]
@@ -112,15 +112,16 @@ vento <- function(u10,v10) {
   
 ########################################################## APPLICO FUNZIONI PREC E NUVOLOSITA'
 #maneggio il vettore delle precipitazioni 
-tp_scumulate <- scumula(tp) #Scumulo la variabile per avere la quantità ogni 3 ore
+tp_scumulate <- scumula(tp) #Scumulo la variabile per avere la quantitÃ  ogni 3 ore
 tcc <- copertura(tcc)
-#la lista "vento" viene separata nelle due variabili velocità e drezione
+#la lista "vento" viene separata nelle due variabili velocitÃ  e drezione
 vento <- vento(u10,v10)
 vv <- vento[[1]]
 dv <- vento[[2]]
 
-################### Creazione del Database Meteo COSMO 5M #######################################à
+################### Creazione del Database Meteo COSMO 5M #######################################
 meteo_db_5m <- dbConnect(RSQLite::SQLite(),dbname = "db_archive\\meteo_db_5m")
+dbRemoveTable(meteo_db_5m, "meteo_comune_5m")
 
 t<-as.POSIXlt(time*3600, origin = "1900-01-01", tz = "GMT")
 t <- format(t,"%Y/%m/%d %H:%M")
