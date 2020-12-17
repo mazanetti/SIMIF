@@ -44,7 +44,7 @@ ui <- fluidPage(
             selectInput("comune", "Comune:", 
                         choices=NULL),
             hr(),
-            h4("Tabella dati - T (°C), Prec (mm)"),
+            h4("Tabella dati - T (", iconv("\xb0C", "latin1", "UTF-8"), "), Prec (mm)"),
             DT::dataTableOutput("table")
             #tableOutput("table")
         ),
@@ -151,7 +151,7 @@ server <- function(input, output,session){
         meteogram2 <- plot_ly(meteo_comune, x = ymd_hm(base_comune()$Orario), y = as.double(base_comune()$Temperatura), type = 'scatter',
                              mode = 'lines+markers', line = list(color = 'green',width = 3), marker = list(color = 'green', size = 8) ) %>%
             layout(title = paste("Temperatura a ",input$comune," (",input$prov,")",sep=""),
-                   yaxis = list(title = "Temperatura (°C)"))
+                   yaxis = list(title = "Temperature (\u00B0C)"))
     })
     
     output$meteogram3 <- renderPlotly({
@@ -177,6 +177,9 @@ server <- function(input, output,session){
 }
 dbDisconnect(meteo_db_5m)
 dbDisconnect(comuni_db)
-# Run the application 
+# Run the application
+options(shiny.host = '0.0.0.0')
+options(shiny.port = 8803)
 shinyApp(ui = ui, server = server)
+
 
