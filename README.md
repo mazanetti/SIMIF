@@ -22,5 +22,5 @@ Nel dettaglio:
 
 La particolare caratteristica dei grafici è quella di essere "dinamici", ossia con possibilità di interagire con gli stessi attraverso selezioni, zoom etc...
 Di seguito un esempio di come si presenta l'interfaccia grafica:
- ![Esempio di interfaccia grafica](Es_interfaccia.PNG)
+ ![Esempio di interfaccia grafica](Es_interfaccia.PNG = 400px)
 
