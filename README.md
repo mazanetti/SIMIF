@@ -32,14 +32,16 @@ Le previsioni vengono aggiornate ogni mattina entro le 9:00, al momento non sono
 
 ### Nuovi sviluppi
 Ulteriori campi di sviluppo possono riguardare:
-- l'implementazione di nuovi modelli al fine di allungare l'orizzonte temporale di previsione (es. ECMWF)
+- L'implementazione di nuovi modelli al fine di allungare l'orizzonte temporale di previsione (es. ECMWF)
 - L'aggiunta del run delle 12 del modello COSMO 5M
 - Discriminazione della neve dalle precipitazioni
 - Aggiunta di nuove variabili da visualizzare
 - Maggiori informazioni (es. quota, coordinate etc. etc.) sul comune selezionato
+- Correzione della temperatura in relazione alla quota della casa comunale
 - Tutto quello che la mente può partorire
 
 ### Riferimenti
 Matteo Zanetti
+
 mzanetti1986@gmail.com
 
