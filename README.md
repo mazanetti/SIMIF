@@ -14,6 +14,7 @@ Ulteriori dettagli sui "mattoni" che costutuiscono l'applicazione sono disponibi
 _In aggiornamento_
 
 ### Utilizzo dell'app
+L'applicazione è raggiungibile da rete interna di Arpa al seguente indirizzo: http://10.10.0.29:8803/, oppure attraverso un link dedicato sulla pagina principale di GHOST (10.10.0.14).
 L'interfaccia si compone di un form di "ricerca comune" diviso per provincia e di 4 output in risposta alla selezione dell'utente.
 Nel dettaglio:
 - Una mappa per geolocalizzare il comune
@@ -23,5 +24,23 @@ Nel dettaglio:
 La particolare caratteristica dei grafici è quella di essere "dinamici", ossia con possibilità di interagire con gli stessi attraverso selezioni, zoom etc...
 Di seguito un esempio di come si presenta l'interfaccia grafica:
 
- ![Esempio di interfaccia grafica|600x400,50%](Es_interfaccia.PNG)
+ ![Esempio di interfaccia grafica](Es_interfaccia.PNG)
+ 
+### Avvertenze
+L'output modellistico non presenta modifiche e/o variazioni in relazione alla quota reale della casa comunale (diversa da quella stimata del modello), quindi ad esempio la temperatura sui comuni di montagna può non risultare sempre accurata.
+Le previsioni vengono aggiornate ogni mattina entro le 9:00, al momento non sono previste modifiche al fine di lasciare traccia di run del modello vecchi, quindi quello presente è sempre l'ultimo disponibile (o funzionante).
+
+### Nuovi sviluppi
+Ulteriori campi di sviluppo possono riguardare:
+- l'implementazione di nuovi modelli al fine di allungare l'orizzonte temporale di previsione (es. ECMWF)
+- L'aggiunta del run delle 12 del modello COSMO 5M
+- Discriminazione della neve dalle precipitazioni
+- Aggiunta di nuove variabili da visualizzare
+- Maggiori informazioni (es. quota, coordinate etc. etc.) sul comune selezionato
+- Tutto quello che la mente può partorire
+
+### Riferimenti
+Matteo Zanetti
+
+mzanetti1986@gmail.com
 
