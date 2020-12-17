@@ -41,6 +41,5 @@ Ulteriori campi di sviluppo possono riguardare:
 
 ### Riferimenti
 Matteo Zanetti
-
 mzanetti1986@gmail.com
 
